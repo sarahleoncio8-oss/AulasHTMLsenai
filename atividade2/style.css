@@ -1,0 +1,16 @@
+h1 {
+    background-color: blue;
+}
+
+#titulo-roxo {
+    border-color: deeppink;
+}
+
+.titulo-rosa {
+    background-color: aliceblue;
+}
+
+section {
+    background-color: aquamarine;
+    padding: 10px;
+}
