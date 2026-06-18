@@ -2,16 +2,48 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Cadastro de Crachá Virtual</title>
 </head>
 <body>
+
+    <h2>Crachá Virtual</h2>
+
+    <form id="formCracha">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" required><br><br>
+
+        <label for="idade">Idade:</label>
+        <input type="text" id="idade" required><br><br>
+
+        <label for="departamento">Departamento:</label>
+        <input type="text" id="departamento" required><br><br>
+
+        <label for="cargo">Cargo:</label>
+        <input type="text" id="cargo" required><br><br>
+
+        <button type="submit">Gerar Crachá</button>
+    </form>
+
     <script>
-        let nome = "Sarah"
-        let idade = "20"
-        let cargo = "Desenvolvedor Júnior"
-        let departamento = "Tecnologia da informação"
-        let TemAcessoRestrito 
+        document.getElementById('formCracha').addEventListener('submit', function(event) {
+            
+            event.preventDefault();
+
+            let nome = document.getElementById('nome').value;
+            let idade = Number(document.getElementById('idade').value);
+            let departamento = document.getElementById('departamento').value;
+            let temAcessoRestrito = true
+            let cargo = document.getElementById('cargo').value;
+            console.log("RESULTADO DO CRACHÁ VIRTUAL")
+            console.log("Nome: ", nome);
+            console.log("Idade: ", idade);
+            console.log("Cargo: ", cargo);
+            console.log("Departamento: ", departamento);
+            console.log("Tem Acesso Restrito?: ", temAcessoRestrito);
+
+            alert("Cadastro finalizado com sucesso!");
+        });
     </script>
+
 </body>
 </html>
