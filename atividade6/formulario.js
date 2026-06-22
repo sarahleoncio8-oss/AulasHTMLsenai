@@ -4,6 +4,10 @@ function imprimirNome() {
     let departamento = document.getElementById("departamento").value;
     let temAcessoRestrito = document.getElementById("temAcessoRestrito").checked; // Retorna true ou false
 
+    if (nome == "sim"){
+        nome = true
+    }
+
     console.log("====== DADOS DO CRACHÁ VIRTUAL ======");
     console.log("Nome (String):", nome);
     console.log("Idade (Number):", idade);
