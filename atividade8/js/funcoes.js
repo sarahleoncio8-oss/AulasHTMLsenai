@@ -55,6 +55,19 @@ function salvarHistorico(nomeDaFuncao, num1, num2, resultado) {
         resultado: resultado
     };
 
+function calcularComImposto(valorProduto){
+
+    if (valorProduto < 50) {
+        valorFinal = valorProduto + (valorProduto * 0.20);
+    } else {
+        let primeiroPasso = valorProduto + (valorProduto * 0.20);
+        
+        valorFinal = primeiroPasso + (primeiroPasso * 0.90);
+    }
+
+}
+}
+
     let historicoLocal = JSON.parse(localStorage.getItem("historicoCalculos")) || [];
     historicoLocal.push(operacao);
 
