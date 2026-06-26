@@ -60,3 +60,38 @@ function salvarHistorico(nomeDaFuncao, num1, num2, resultado) {
 
     localStorage.setItem("historicoCalculos", JSON.stringify(historicoLocal));
 }
+
+function apagarLocalStorage(){
+
+    let confirmaApagar = window.confirm("Você deseja apagar seu histórico?")
+    
+    if(confirmaApagar){
+        localStorage.clear();
+    }
+}
+
+    
+
+
+
+/*
+    Nova função de cálculo de imposto de importação
+
+    Se o produto custar menos que $50 (cinquenta dolares)
+    Você vai ter que pagar o valor produto, mais 20%
+
+    Se o produto custar mais do que $50
+    Você vai ter que pagar o valor do produto +20%, depois mais 90% sobre o resultado dos 20%
+
+    Seja salvo num novo objeto, dentro do local storage, seu hitórico de coversão.
+
+    Ex: histórico de calculos matemáticos, e histórico de conversões
+
+    Nao precisa converter valor de dolar pra real, e é pra fazer dentro da culculadora que ja temos
+
+    Mas é pra colocar esse valor de importação em um único botao que ele ja converte
+ 
+    Olhar em aba persistente na atividade 7 e em alguma outra que nao lembro, persistente no navegaodor
+
+    Usar if else let, segundo codigos de colegas
+ */
