@@ -55,23 +55,38 @@ function salvarHistorico(nomeDaFuncao, num1, num2, resultado) {
         resultado: resultado
     };
 
-function calcularComImposto(valorProduto){
+    let historicoLocal = JSON.parse(localStorage.getItem("historicoCalculos")) || [];
+    historicoLocal.push(operacao);
 
+    localStorage.setItem("historicoCalculos", JSON.stringify(historicoLocal));
+}    
+
+function calcularComImposto(valorProduto, valorFinal){
+    
     if (valorProduto < 50) {
         valorFinal = valorProduto + (valorProduto * 0.20);
     } else {
         let primeiroPasso = valorProduto + (valorProduto * 0.20);
         
-        valorFinal = primeiroPasso + (primeiroPasso * 0.90);
+       valorFinal = primeiroPasso + (primeiroPasso * 0.90);
     }
+    salvarImposto(valorProduto,valorFinal)
 
 }
-}
 
-    let historicoLocal = JSON.parse(localStorage.getItem("historicoCalculos")) || [];
-    historicoLocal.push(operacao);
+function salvarImposto(valorProduto,valorFinal){
+    let imposto = {
+        num1: valorProduto,
+        resultado : valorFinal
 
-    localStorage.setItem("historicoCalculos", JSON.stringify(historicoLocal));
+    };
+
+    console.log(imposto);
+
+    let JSONhistorico = JSON.parse(localStorage.getItem("imposto")) || [];
+    JSONhistorico.push(imposto);
+
+    localStorage.setItem("imposto", JSON.stringify(JSONhistorico));
 }
 
 function apagarLocalStorage(){
